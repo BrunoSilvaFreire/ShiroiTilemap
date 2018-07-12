@@ -9,7 +9,7 @@ private:
     uint32 width;
     uint32 height;
     uint16 *map;
-    Tile **tiles;
+    Tile * tiles;
     uint16 total_tiles;
     uint32 TileIndexOf(Tile * tile);
 public:
