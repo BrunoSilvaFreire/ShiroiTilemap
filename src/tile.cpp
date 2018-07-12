@@ -6,3 +6,7 @@ Tile::Tile(std::string name, uint32 id) {
     this->name = std::move(name);
     this->id = id;
 }
+
+uint32 Tile::GetId() const {
+    return id;
+}

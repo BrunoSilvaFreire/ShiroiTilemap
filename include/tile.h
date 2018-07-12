@@ -10,4 +10,6 @@ private:
     uint32 id;
 public:
     Tile(std::string name, uint32 id);
+
+    uint32 GetId() const;
 };

@@ -4,7 +4,7 @@
 TileMap::TileMap(uint32 width, uint32 height) {
     this->width = width;
     this->height = height;
-    this->tiles = std::vector<Tile>();
+    this->tiles = std::vector<Tile *>();
     this->cached_map = (uint16 *) malloc(width * height * sizeof(uint16));
 }
 
@@ -34,4 +34,25 @@ uint16 TileMap::GetTile(uint32 index) {
 
 void TileMap::Resize(uint32 new_width, uint32 new_height) {
     realloc(cached_map, new_width * new_height * sizeof(uint16));
+}
+
+Tile *TileMap::GetTileType(uint16 id) {
+    for (auto tile : tiles) {
+        if (tile->GetId() == id) {
+            return tile;
+        }
+    }
+    return nullptr;
+}
+
+void TileMap::AddTileType(Tile *tile) {
+    tiles.push_back(tile);
+}
+
+uint32 TileMap::GetTotalTileTypes() {
+    return tiles.size();
+}
+
+TileMap::~TileMap() {
+    free(cached_map);
 }
