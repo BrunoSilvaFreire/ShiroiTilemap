@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project(studypng CXX)
+set(TILEMAP_INCLUDES include/tilemap.h include/types.h include/tile.h)
+set(TILEMAP_SOURCES src/tilemap.cpp src/tile.cpp)
+add_library(shiroi_tilemap SHARED ${TILEMAP_INCLUDES} ${TILEMAP_SOURCES})
+target_include_directories(shiroi_tilemap PUBLIC include)
+set_target_properties(shiroi_tilemap PROPERTIES LINKER_LANGUAGE CXX)
