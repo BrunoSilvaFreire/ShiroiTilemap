@@ -2,11 +2,11 @@
 #include <string>
 #include <types.h>
 
-Tile::Tile(std::string name, uint32 id) {
+Tile::Tile(std::string name, uint16 id) {
     this->name = std::move(name);
     this->id = id;
 }
 
-uint32 Tile::GetId() const {
+uint16 Tile::GetId() const {
     return id;
 }

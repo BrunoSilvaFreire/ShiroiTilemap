@@ -8,8 +8,10 @@ class TileMap {
 private:
     uint32 width;
     uint32 height;
-    uint16 *cached_map;
-    std::vector<Tile *> tiles;
+    uint16 *map;
+    Tile **tiles;
+    uint16 total_tiles;
+    uint32 TileIndexOf(Tile * tile);
 public:
     TileMap(uint32 width, uint32 height);
 
@@ -30,6 +32,8 @@ public:
     uint16 GetTile(uint32 index);
 
     void AddTileType(Tile *tile);
+
+    void RemoveTileType(Tile *tile);
 
     uint32 GetTotalTileTypes();
 

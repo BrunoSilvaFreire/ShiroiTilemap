@@ -7,9 +7,9 @@
 class Tile {
 private:
     std::string name;
-    uint32 id;
+    uint16 id;
 public:
-    Tile(std::string name, uint32 id);
+    Tile(std::string name, uint16 id);
 
-    uint32 GetId() const;
+    uint16 GetId() const;
 };
