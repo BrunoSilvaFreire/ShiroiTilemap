@@ -25,11 +25,11 @@ public:
 
     uint64 GetArea();
 
-    uint32 IndexOf(uint32 x, uint32 y);
+    uint64 IndexOf(uint32 x, uint32 y);
 
     uint16 GetTile(uint32 x, uint32 y);
 
-    uint16 GetTile(uint32 index);
+    uint16 GetTile(uint64 index);
 
     void AddTileType(Tile *tile);
 

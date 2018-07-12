@@ -11,7 +11,7 @@ TileMap::TileMap(uint32 width, uint32 height) {
     this->map = (uint16 *) malloc(width * height * sizeof(uint16));
 }
 
-uint32 TileMap::IndexOf(uint32 x, uint32 y) {
+uint64 TileMap::IndexOf(uint32 x, uint32 y) {
     return y * width + x;
 }
 
@@ -31,7 +31,7 @@ uint64 TileMap::GetArea() {
     return width * height;
 }
 
-uint16 TileMap::GetTile(uint32 index) {
+uint16 TileMap::GetTile(uint64 index) {
     return *(map + index);
 }
 
